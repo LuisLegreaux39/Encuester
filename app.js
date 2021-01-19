@@ -27,7 +27,6 @@ app.get('/',(req,res)=>{
     
 })
 app.get('/CrearEncuesta',(req,res)=>{
-
     res.render('CrearEncuesta');
 })
 app.get('/VerEncuesta',(req,res)=>{
@@ -38,7 +37,7 @@ app.get('/VerEncuesta',(req,res)=>{
 
 //POST
 app.post('/CrearEncuesta',(req,res)=>{
-    console.log(req)
+    // console.log(req)
     res.render('CrearEncuesta');
     
 })
