@@ -1,0 +1,27 @@
+#createButton{
+    border-radius: 95%;
+    height: 70px;
+    width: 70px;
+    font-size: xx-large;
+    font-weight: bold;
+}
+#indexMainContainer{
+    min-height: 600px;
+}
+#indexMainContainerText{
+    text-align: center;
+}
+@media(max-width:400px){
+    #indexMainContainer{
+        overflow-y: scroll;
+        max-height: 600px;
+    }
+}
+
+/* #indexMainContainer{
+    overflow-y: scroll;
+    max-height: 700px;
+}
+#indexMainContainer >img{
+    height: 300px;
+} */
