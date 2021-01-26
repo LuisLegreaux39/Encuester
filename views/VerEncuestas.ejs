@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<%-include('partials/Headers.ejs')%>
+
+    <body>
+        <!----Barra de navegacion------>
+        <%-include('partials/NavBar.ejs')%>
+            <!------------Parte media------------------>
+            <br>
+            <div class="container">
+                <table class="table table-active">
+                    <thead>
+                        <tr>
+                            <th scope="col">Tipo de encuesta</th>
+                            <th scope="col">Nombre de la encuesta</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% _encuestas.forEach(function(item){%>
+                            <tr class="table-light">
+                                <td><%=item.TIPO_ENCUESTA%></td>
+                                <td><%=item.NOMBRE_ENCUESTA%></td>
+                              </tr>
+                            <% })%>
+                    </tbody>
+                </table>
+            </div>
+
+
+            <!------------------footer------------>
+
+            <link href="css/bootstrap.min.css" rel="stylesheet">
+            <script src="js/mainPageHandler.js"></script>
+            <script src="js/bootstrap.bundle.min.js"></script>
+
+    </body>
+
+</html>

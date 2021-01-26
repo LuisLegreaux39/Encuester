@@ -2,8 +2,8 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const Global = require('./Partials/Globals');
-const write = require('./Partials/Funtionalities');
-const preguntas = require('./Partials/Encuesta')
+const preguntas = require('./Partials/Encuesta');
+const DB = require('./Partials/MySql_Db_Conn');
 
 ///settings
 const host = '0.0.0.0';
@@ -27,12 +27,14 @@ app.get('/',(req,res)=>{
     
 })
 app.get('/CrearEncuesta',(req,res)=>{
-    res.render('CrearEncuesta');
+    res.render('CrearEncuesta' );
 })
 app.get('/VerEncuesta',(req,res)=>{
-    var _preguntas = preguntas.preguntas;
-    res.render('Index',{ _preguntas } );
-    
+    var _encuestas=[];
+    DB.getEncuestas((err,result)=>{
+        _encuestas = result;
+        res.render('VerEncuestas',{ _encuestas } );
+    })
 })
 
 //POST

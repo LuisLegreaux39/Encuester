@@ -1,18 +1,25 @@
 <br>
-<h3> Inserte las preguntas que desea presentar</h3>
-<br>
 <form action="/CrearEncuesta" method="POST">
     <fieldset>
+        <h3>Digite el nombre de su encuesta</h3>
+        <div class="row">
+            <div class="col-md-6">
+                <br>
+                <input type='text' class='form-control-plaintext' id='NombreEncuesta' name='NombreEncuesta'
+                    placeholder='Introdusca el nombre de su encuesta' style="border-color: darkgray;
+                border-width: 1px;">
+            </div>
+            
+        </div>
+        <br>
+        <h3> Inserte las preguntas que desea presentar</h3>
+        <br>
         <div class="form-group row">
-            <div class="col-lg-10" id="questionBox" style="
+            <div class="col" id="questionBox" style="
             overflow-y:scroll;
             max-height: 180px;">
-                <br>
-                <input type='text' class='form-control-plaintext' id='Pregunta' name='Pregunta'
-                    placeholder='Introdusca su pregunta' style="border-color: darkgray;
-                    border-width: 1px;">
-                <br>
-            </div>
+            <%-include('./MinQuestion.ejs')%>
+            </div> 
         </div>
         <div class="btn-group-vertical">
             <button type="button" onclick="handleSelectValue()" class="btn btn-info btn-md" name="addQuestion">
@@ -24,7 +31,7 @@
             </button>
             <br>
         </div>
-        
+
         <div style="padding-left: 80%;">
             <button type="submit" id="createButton" class="btn btn-success btn-md ">+</button>
         </div>

@@ -1,0 +1,59 @@
+CREATE TABLE ENCUESTA(
+    ID_ENCUESTA int NOT NULL AUTO_INCREMENT,
+    NOMBRE_ENCUESTA VARCHAR(50) NOT NULL,
+    TIPO_ENCUESTA VARCHAR(255),
+    PRIMARY KEY(ID_ENCUESTA)
+);
+
+
+
+CREATE TABLE PREGUNTAS(
+    ID_PREGUNTA int NOT NULL AUTO_INCREMENT,
+    PREGUNTA VACHAR(255),
+    ID_TIPO_PREGUNTA int,
+    PRIMARY KEY(ID_PREGUNTA)
+)
+
+CREATE TABLE RESPUESTAS(
+
+)
+INSERTS----->
+    INSERT INTO `encuesta`( `NOMBRE_ENCUESTA`, `TIPO_ENCUESTA`) VALUES ("encuesta 3","5")
+
+
+USERS---->
+    mysql> SELECT user, host, password FROM mysql.user WHERE user='root'; 
+
+----------------------------------------------------------------------------------
+
+    class BD {
+
+    startConnecction() {
+        this.conn.connect(err => {
+            if (err) {
+                this.connection = false;
+                return this.connection;
+            }
+            return this.connection;
+        })
+    }
+    killConnection() {
+        if (this.connection === true) {
+            this.conn.end();
+        }
+    }
+    getEncuestas(callback) {
+        var query = `SELECT * FROM encuesta`;
+        this.conn.query(query, (err, res, fields) => {
+            if (err) {
+                throw err;
+            }else{
+                var temp = JSON.stringify(res);
+                var result = JSON.parse(temp);
+                this.killConnection();
+                callback({},result);
+            }
+
+        });
+    }
+}

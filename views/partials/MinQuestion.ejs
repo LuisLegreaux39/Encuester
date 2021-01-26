@@ -1,11 +1,19 @@
-<div class="form-group row">
-    
-    <div class="col-sm-10">
-        <input type="text" 
-        style="border-color: rgb(131, 124, 122);"
-        class="form-control-plaintext" 
-        name='Pregunta'
-        id="staticEmail" 
-        placeholder="Introdusca su pregunta">
+<div class="row">
+    <div class="col-md-6">
+        <br>
+        <input type='text' class='form-control-plaintext' id='Pregunta' name='Pregunta'
+            placeholder='Introdusca su pregunta' style="border-color: darkgray;
+            border-width: 1px;">
+        <br>
+
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+            <br>
+            <select class="form-control" id="tipoDePregunta" name="tipoDePregunta">
+                <option value="1">Verdadero o falso</option>
+                <option value="2">Respuesta libre</option>
+            </select>
+        </div>
     </div>
 </div>
